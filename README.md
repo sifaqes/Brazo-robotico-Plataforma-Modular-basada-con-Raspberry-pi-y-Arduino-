@@ -1,1 +1,3 @@
-# ros_raspberry_pi4
+Open LXTerminal en Raspberry Pi
+
+
