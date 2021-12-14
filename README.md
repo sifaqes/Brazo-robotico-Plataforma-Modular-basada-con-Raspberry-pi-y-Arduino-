@@ -1,3 +1,24 @@
+Plataforma Modular Basada en RPi y Arduino
+
+Autor:
+Sifaqes Zerrouki
+![image](https://user-images.githubusercontent.com/64240372/145916512-f5b0eb46-d80b-48e6-a629-27b729190055.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Open LXTerminal en Raspberry Pi
 
 Paso1
