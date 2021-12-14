@@ -7,15 +7,19 @@ Escuela Superior Politécnica.
 
 Máster Universitario en Automática y Robótica.
 
+![image](https://user-images.githubusercontent.com/64240372/145919115-a0a8b98a-b2bb-4938-9030-4f4bcfa72618.png)
 
 # Resumen
+
 •	Capítulo 1: Introducción 
 	El primer capítulo presenta el alcance de este proyecto. Además, explica los problemas planteados y los objetivos deseados y los pasos que seguirán.
+
 •	Capítulo 2: Preparación del entorno ROS para RPi.
 	Preparamos lo necesario de la plataforma, así como las tarjetas el software y sus bibliotecas y paquetes del trabajo.
 
 •	Capítulo 3: Diseño 3D de la plataforma modular.
 	El tercer capítulo está reservado para el diseño la plataforma modular que desarrollaremos.
+
 •	Capítulo 4: Un brazo desarrollado con la comunicación serial RPi y Arduino
 	El tercer capítulo construimos un brazo 6DOF y detalla el proceso de desarrollar una comunicación serial entre la RPi y Arduino, es decir cómo se comunica entre ellos.
 
@@ -25,6 +29,13 @@ Aunque estos robots en teoría están basados en diferentes lenguajes de program
 
 # Capítulo 2: Preparación del entorno ROS para RPi.
 	Para instalar la versión ROS kinetic tendremos iniciar sesión en RPi. Luego ejecute estos comandos para agregar el repositorio de paquetes ROS [2], construir herramientas e inicializar la herramienta de dependencia ROS .
+
+
+
+
+ara instalar la versión ROS kinetic tendremos iniciar sesión en RPi. Luego ejecute estos comandos para agregar el repositorio de paquetes ROS [2], construir herramientas e inicializar la herramienta de dependencia ROS .
+
+
 
 
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
