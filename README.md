@@ -7,6 +7,10 @@ Escuela Superior Politécnica.
 
 Máster Universitario en Automática y Robótica.
 
+
+https://user-images.githubusercontent.com/64240372/145921452-13b28959-db05-458c-92cb-032f5368e480.mp4
+
+
 ![image](https://user-images.githubusercontent.com/64240372/145919115-a0a8b98a-b2bb-4938-9030-4f4bcfa72618.png)
 
 # Resumen
