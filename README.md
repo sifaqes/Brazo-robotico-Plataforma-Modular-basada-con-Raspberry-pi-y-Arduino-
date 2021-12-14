@@ -1,8 +1,12 @@
 # proyecto Plataforma Modular Basada en RPi y Arduino
 Autor: Sifaqes Zerrouki.
+
 Univrssidad de Alicante .
+
 Escuela Superior Politécnica. 
+
 Máster Universitario en Automática y Robótica.
+
 
 # Resumen
 •	Capítulo 1: Introducción 
