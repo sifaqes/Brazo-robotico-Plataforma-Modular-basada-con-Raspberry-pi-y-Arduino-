@@ -1,4 +1,4 @@
-# proyecto Plataforma Modular Basada en RPi y Arduino
+# Proyecto Plataforma Modular Basada en RPi y Arduino (Brazo robotico con ROS)
 Autor: Sifaqes Zerrouki.
 
 Univrssidad de Alicante .
@@ -112,11 +112,9 @@ Y reemplazamos
 con:
 	
 	CONSOLE_BRIDGE_logError
-	Ahora, se construye ROS Kinetic en este punto, la compilación debería realizarse correctamente.
+Ahora, se construye ROS Kinetic en este punto, la compilación debería realizarse correctamente.
 	
 	cd ~/ros_catkin_ws
-
-	
 	sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic
 Agregamos a ~ / .bashrc y también ejecutamos en su Shell:
 	
@@ -129,7 +127,7 @@ o puede usar esto:
 ![image](https://user-images.githubusercontent.com/64240372/145917627-1a341d6c-97ce-4033-819f-19d763b01995.png)
 
 # Capítulo 3: Diseño 3D de la plataforma modular
-	Para el modelado paramétrico usaremos FreeCAD con licencia de código abierto, con el objetivo de diseñar una caja que necesitaríamos para la RPi y Arduino Mega y Arduino Uno. Esto nos permitirá diseñar una plataforma modular 3D, compatible con los tres modelos [4]. 
+  Para el modelado paramétrico usaremos FreeCAD con licencia de código abierto, con el objetivo de diseñar una caja que necesitaríamos para la RPi y Arduino Mega y Arduino Uno. Esto nos permitirá diseñar una plataforma modular 3D, compatible con los tres modelos [4]. 
 
 ![image](https://user-images.githubusercontent.com/64240372/145917896-19894d39-5c2b-4247-a03b-95391b676002.png)
 
@@ -139,13 +137,15 @@ o puede usar esto:
 
 4.1.	Circuito de alimentación
 	Es muy fácil controlar el servomotor directamente desde el Arduino. Sin embargo, el servomotor puede requerir más corriente de la que puede proporcionar Arduino. El siguiente ejemplo utiliza un servomotor que recibe corriente directamente del Arduino a través de USB.
-  ![image](https://user-images.githubusercontent.com/64240372/145918058-d5938eb4-3e8f-4ec3-9c25-2ac4de9d1924.png)
-  ![image](https://user-images.githubusercontent.com/64240372/145918220-b82bf293-8780-48eb-bbcf-7bba9fd7a1bc.png)
+	
+  	![image](https://user-images.githubusercontent.com/64240372/145918058-d5938eb4-3e8f-4ec3-9c25-2ac4de9d1924.png)
+  	![image](https://user-images.githubusercontent.com/64240372/145918220-b82bf293-8780-48eb-bbcf-7bba9fd7a1bc.png)
   
 4.2.	 Estudiar las entradas y salidas
 	En este paso, construimos un circuito de control que permite a transmitir datos a nuestra Nodo de ROS, Así pues, el circuito tiene seis potenciómetros de resistencia 1k que varía la señal entre 0 ° y180 °, Lo hacemos una simulación diagrama en ISIS.
-  ![image](https://user-images.githubusercontent.com/64240372/145918294-eeacaf18-3cd9-4bce-bff1-48f1e4f0c340.png)
-![image](https://user-images.githubusercontent.com/64240372/145918310-55ae1444-5676-4762-aa30-bdec02dfc2ab.png)
+	
+  	![image](https://user-images.githubusercontent.com/64240372/145918294-eeacaf18-3cd9-4bce-bff1-48f1e4f0c340.png)
+	![image](https://user-images.githubusercontent.com/64240372/145918310-55ae1444-5676-4762-aa30-bdec02dfc2ab.png)
   
   Además, creamos un archivo que se acaba con .launch y construimos el script siguiente, Así pues, se ejecuta el ROS y llama a dos Nodos diferente al mismo tiempo y abre dos puertos seriales vincula con el maestro:
 
@@ -153,22 +153,26 @@ o puede usar esto:
 # Para Ejecutar el programa abrimos:
 
 Paso1: Despues crear un pacakge ros sellama brazo_serial, despuies ejecutar el  nodo de Arduino uno y mega con roslaunch archivo  
-$ roscd brazo_serial
-$ roslaunch brazo_serial arduino.launch
+	
+	$ roscd brazo_serial
+	$ roslaunch brazo_serial arduino.launch
 
 Paso2:ejecutar la nudo de RPi
-$ python arduino.python
+	
+	$ python arduino.python
 
 Paso3:lista de topicos y nodos
-$ rosnode list 
-$ rostopic list 
+	
+	$ rosnode list 
+	$ rostopic list 
 
 Paso4:escuchar mensajes de resuesta
-$ rostopic echo monitor_de_control
+	
+	$ rostopic echo monitor_de_control
 
 
 
-
+# Bibliografía
 RPi: Raspberry Pi4
 
 
