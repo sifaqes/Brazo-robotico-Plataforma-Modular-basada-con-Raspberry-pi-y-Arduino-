@@ -28,29 +28,32 @@ Máster Universitario en Automática y Robótica.
 Aunque estos robots en teoría están basados en diferentes lenguajes de programación y en consecuencia no sería posible de ninguna manera comunicarse entre ellos (así como Arduino y Python, por ejemplo) el gran reto en este trabajo es hacerlo posible mediante la instalación de diferentes robots que se controlen entre ellos gracias a la comunicación serial. Por otro lado, la plataforma tiene aplicación en las empresas agrícolas e industriales; desde un brazo robótico que hace un proceso de tratamiento de una cinta de producción de frutas o hasta un brazo robótico industrial que suelda   carrocería del coche.
 
 # Capítulo 2: Preparación del entorno ROS para RPi.
-	Para instalar la versión ROS kinetic tendremos iniciar sesión en RPi. Luego ejecute estos comandos para agregar el repositorio de paquetes ROS [2], construir herramientas e inicializar la herramienta de dependencia ROS .
+Para instalar la versión ROS kinetic tendremos iniciar sesión en RPi. Luego ejecute estos comandos para agregar el repositorio de paquetes ROS [2], construir herramientas e inicializar la herramienta de dependencia ROS .
 
+	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
+	sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
+	sudo apt-get update
 
-ara instalar la versión ROS kinetic tendremos iniciar sesión en RPi. Luego ejecute estos comandos para agregar el repositorio de paquetes ROS [2], construir herramientas e inicializar la herramienta de dependencia ROS .
+	sudo apt-get install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake
 
+	sudo rosdep init
 
-
-
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-get update
-sudo apt-get install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake
-sudo rosdep init
-rosdep update
+	rosdep update
 
 Creé un espacio de trabajo para construir ROS Kinetic desde la fuente.
-mkdir ~/ros_catkin_ws
-cd ~/ros_catkin_ws
-rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar > kinetic-ros_comm-wet.rosinstall
-wstool init -j8 src kinetic-ros_comm-wet.rosinstall
-rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+	
+	mkdir ~/ros_catkin_ws
+	cd ~/ros_catkin_ws
+	rosdep update
+	
+Despues Install el sistema:
+
+	rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar > kinetic-ros_comm-wet.rosinstall
+	wstool init -j8 src kinetic-ros_comm-wet.rosinstall
+	rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+
 
 La construcción de ROS en este punto fallará con varios errores. Arreglemos esos errores editando manualmente el código fuente de ROS. Vamos a editar este fechero. Retomaremos este punto en el apartado de las conclusiones:
 línea 885: enlace siguiente:
