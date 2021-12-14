@@ -56,46 +56,74 @@ Despues Install el sistema:
 
 
 La construcción de ROS en este punto fallará con varios errores. Arreglemos esos errores editando manualmente el código fuente de ROS. Vamos a editar este fechero. Retomaremos este punto en el apartado de las conclusiones:
-línea 885: enlace siguiente:
-/home/pi/ros_catkin_ws/src/opencv3/modules/python/src2/cv2.cpp
-Debemos reemplazar 
-char* str = PyString_AsString(obj);
-con
-const char* str = PyString_AsString(obj);
-A continuación, editamos los archivos.
-/home/pi/ros_catkin_ws/src/rospack/include/rospack/rospack.h /home/pi/ros_catkin_ws/src/rospack/src/rospack.cpp /home/pi/ros_catkin_ws/src/rospack/src/utils.cpp
-Eliminamos todas las apariciones de
-/tr1
-Y reemplazamos todas las apariciones de
-std::tr1
-con
-boost
-Editamos los archivos a continuación.
-/home/pi/ros_catkin_ws/src/actionlib/include/actionlib/client/simple_action_client.h
-/home/pi/ros_catkin_ws/src/actionlib/include/actionlib/destruction_guard.h /home/pi/ros_catkin_ws/src/actionlib/include/actionlib/server/simple_action_server_imp.h 
-/home/pi/ros_catkin_ws/src/actionlib/src/connection_monitor.cpp /home/pi/ros_catkin_ws/src/actionlib/test/destruction_guard_test.cpp /home/pi/ros_catkin_ws/src/bond_core/bondcpp/src/bond.cpp /home/pi/ros_catkin_ws/src/ros_comm/roscpp/include/ros/timer_manager.h /home/pi/ros_catkin_ws/src/ros/roslib/test/utest.cpp
-Reemplazamos todas las apariciones de todos los archivos cada uno manualmente.
-boost::posix_time::milliseconds(…)
-con:
-boost::posix_time::milliseconds(int(…))
-Y editamos el archivo a continuación.
-/home/pi/ros_catkin_ws/src/geometry2/tf2/src/buffer_core.cpp
-Debemos Reemplazamos  
-logWarn
-con:
-CONSOLE_BRIDGE_logWarn
-Y reemplazamos 
-logError
-con:
-CONSOLE_BRIDGE_logError
-	Ahora, se construye ROS Kinetic en este punto, la compilación debería realizarse correctamente.
-cd ~/ros_catkin_ws
 
-sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic
+línea 885: enlace siguiente:
+
+Creé un espacio de trabajo para construir ROS Kinetic desde la fuente.
+	
+	/home/pi/ros_catkin_ws/src/opencv3/modules/python/src2/cv2.cpp
+Debemos reemplazar 
+	
+	char* str = PyString_AsString(obj);
+con
+	
+	const char* str = PyString_AsString(obj);
+A continuación, editamos los archivos.
+	
+	/home/pi/ros_catkin_ws/src/rospack/include/rospack/rospack.h 
+	/home/pi/ros_catkin_ws/src/rospack/src/rospack.cpp 
+	/home/pi/ros_catkin_ws/src/rospack/src/utils.cpp
+	
+Eliminamos todas las apariciones de
+	
+	/tr1
+Y reemplazamos todas las apariciones de
+	
+	std::tr1
+con
+	
+	boost
+Editamos los archivos a continuación.
+	
+	/home/pi/ros_catkin_ws/src/actionlib/include/actionlib/client/simple_action_client.h
+	/home/pi/ros_catkin_ws/src/actionlib/include/actionlib/destruction_guard.h /home/pi/ros_catkin_ws/src/actionlib/include/actionlib/server/simple_action_server_imp.h 
+	/home/pi/ros_catkin_ws/src/actionlib/src/connection_monitor.cpp /home/pi/ros_catkin_ws/src/actionlib/test/destruction_guard_test.cpp
+	/home/pi/ros_catkin_ws/src/bond_core/bondcpp/src/bond.cpp /home/pi/ros_catkin_ws/src/ros_comm/roscpp/include/ros/timer_manager.h
+	/home/pi/ros_catkin_ws/src/ros/roslib/test/utest.cpp
+	
+Reemplazamos todas las apariciones de todos los archivos cada uno manualmente.
+	
+	boost::posix_time::milliseconds(…)
+con:
+	
+	boost::posix_time::milliseconds(int(…))
+Y editamos el archivo a continuación.
+	
+	/home/pi/ros_catkin_ws/src/geometry2/tf2/src/buffer_core.cpp
+Debemos Reemplazamos  
+	
+	logWarn
+con:
+	
+	CONSOLE_BRIDGE_logWarn
+Y reemplazamos 
+	
+	logError
+con:
+	
+	CONSOLE_BRIDGE_logError
+	Ahora, se construye ROS Kinetic en este punto, la compilación debería realizarse correctamente.
+	
+	cd ~/ros_catkin_ws
+
+	
+	sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic
 Agregamos a ~ / .bashrc y también ejecutamos en su Shell:
-source /opt/ros/kinetic/setup.bash
+	
+	source /opt/ros/kinetic/setup.bash
 o puede usar esto:
-source /opt/ros/kinetic/setup.bash
+	
+	source /opt/ros/kinetic/setup.bash
 
 
 ![image](https://user-images.githubusercontent.com/64240372/145917627-1a341d6c-97ce-4033-819f-19d763b01995.png)
