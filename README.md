@@ -28,6 +28,8 @@ https://user-images.githubusercontent.com/64240372/145921452-13b28959-db05-458c-
   Este proyecto pretende crear una plataforma modular basada en RPi y Arduino, en la que se conecten entre ellas con comunicación serial. El proyecto se puede probar en empresas emergentes de tecnología industrial que busquen una alternativa fácil, barata y de código abierto. 
 Aunque estos robots en teoría están basados en diferentes lenguajes de programación y en consecuencia no sería posible de ninguna manera comunicarse entre ellos (así como Arduino y Python, por ejemplo) el gran reto en este trabajo es hacerlo posible mediante la instalación de diferentes robots que se controlen entre ellos gracias a la comunicación serial. Por otro lado, la plataforma tiene aplicación en las empresas agrícolas e industriales; desde un brazo robótico que hace un proceso de tratamiento de una cinta de producción de frutas o hasta un brazo robótico industrial que suelda   carrocería del coche.
 
+![image](https://user-images.githubusercontent.com/64240372/145923710-1f90015d-1d6f-43d7-88a7-e2b4451928d1.png)
+
 # Capítulo 2: Preparación del entorno ROS para RPi.
 Para instalar la versión ROS kinetic tendremos iniciar sesión en RPi. Luego ejecute estos comandos para agregar el repositorio de paquetes ROS [2], construir herramientas e inicializar la herramienta de dependencia ROS .
 
@@ -129,8 +131,6 @@ o puede usar esto:
 
 # Capítulo 3: Diseño 3D de la plataforma modular
   Para el modelado paramétrico usaremos FreeCAD con licencia de código abierto, con el objetivo de diseñar una caja que necesitaríamos para la RPi y Arduino Mega y Arduino Uno. Esto nos permitirá diseñar una plataforma modular 3D, compatible con los tres modelos [4]. 
-
-![image](https://user-images.githubusercontent.com/64240372/145917896-19894d39-5c2b-4247-a03b-95391b676002.png)
 
 ![image](https://user-images.githubusercontent.com/64240372/145917933-2a781c5c-3e4f-42fb-aeef-49c1be5ed71e.png)
 
