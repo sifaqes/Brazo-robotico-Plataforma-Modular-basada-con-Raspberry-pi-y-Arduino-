@@ -1,12 +1,9 @@
 # Proyecto Plataforma Modular Basada en RPi y Arduino (Brazo robotico con ROS)
 Autor: Sifaqes Zerrouki.
-
 Univrssidad de Alicante .
-
 Escuela Superior Politécnica. 
-
 Máster Universitario en Automática y Robótica.
-
+Personal email:siphaxtfm@gmail.com
 
 https://user-images.githubusercontent.com/64240372/145921452-13b28959-db05-458c-92cb-032f5368e480.mp4
 
